@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>उत्पादन तपशील - सिमेंट गव्हाण (Cattle Trough)</title>
+    <meta name="description" content="गुरांना चारा आणि पाणी देण्यासाठी अत्यंत मजबूत सिमेंट गव्हाण, स्टँड आणि झाकण (कॅप) योग्य दरात उपलब्ध.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --white: #ffffff;
+            --amazon-orange: #FF9900;
+            --text-color: #111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header a.logo-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        header nav ul li a:hover {
+            color: var(--amazon-orange);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* --- GALLERY STYLE --- */
+        .product-gallery {
+            flex: 1 1 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 1. The Container */
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            /* strict snapping */
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding-right: 40px;
+
+            /* Optional: Hides scrollbar for cleaner look */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Optional: Hides scrollbar for Chrome/Safari */
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* 2. The Images (Child Elements) */
+        .slider>* {
+            /* Aligns the image to the start of the container */
+            scroll-snap-align: start;
+
+            /* FORCE STOP: Prevents skipping images on fast swipes */
+            scroll-snap-stop: always;
+
+            /* ensure images don't shrink */
+            flex: 0 0 auto;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider img {
+            width: 100%;
+            /* Show most of the image */
+            flex-shrink: 0;
+            object-fit: contain;
+            scroll-snap-align: center;
+            max-height: 450px;
+            background: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        /* --- VISUAL DOTS --- */
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: var(--amazon-orange);
+            width: 20px;
+            /* Lengthens the active dot for better visibility */
+            border-radius: 10px;
+        }
+
+        /* --- PRODUCT INFO --- */
+
+        /* --- GLOBAL CONTAINER --- */
+        .product-card-container {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        /* --- HEADINGS --- */
+        .product-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: #3498db;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        /* --- CONTENT BLOCKS --- */
+        .product-overview {
+            background-color: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 15px 20px;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .important-notice-box {
+            background-color: #fff9e6; /* Soft warm amber yellow */
+            border: 2px dashed #f39c12; /* Dashed orange border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #2c3e50;
+            line-height: 1.6;
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.08);
+            position: relative;
+        }
+
+        .important-notice-box strong {
+            color: #d35400; /* Darker orange for warning header */
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .important-notice-box strong i {
+            font-size: 1.4rem;
+            margin-right: 10px;
+            animation: pulse 2s infinite; /* A very subtle pulsing animation on the warning icon */
+        }
+
+        .important-notice-box p {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 500; /* Slightly bolder text so it stands out */
+        }
+
+        .important-notice-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* --- SPECS TABLE --- */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .specs-table th {
+            background-color: #f1f4f8;
+            color: #2c3e50;
+            width: 35%;
+        }
+
+        /* --- DIMENSIONS & LISTS --- */
+        .dimension-box {
+            background-color: #eef6fb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #3498db;
+            margin-top: 15px;
+        }
+
+        .length-highlight {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .size-tag {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 3px;
+            font-weight: bold;
+        }
+
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        ul.custom-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* --- BUY BOX --- */
+        .buy-box {
+            margin-top: 50px;
+            background-color: #f4fcfa;
+            border: 2px dashed #27ae60;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.1);
+        }
+
+        .price-text {
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .availability-text {
+            color: #27ae60;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn-call {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-call:hover {
+            background-color: #219150;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+        }
+
+                /* Mobile Styling Refinement */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 10px;
+                gap: 15px;
+            }
+
+            .product-gallery {
+                flex: 1 1 100%;
+            }
+
+            .product-card-container {
+                padding: 20px 15px;
+                margin: 10px 0;
+                border-radius: 4px;
+                box-shadow: none;
+                border: none;
+            }
+
+            .product-title {
+                font-size: 1.7rem;
+                line-height: 1.3;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                margin-top: 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .specs-table th, .specs-table td {
+                padding: 10px 8px;
+                font-size: 0.95rem;
+            }
+
+            .important-notice-box {
+                padding: 15px;
+                margin: 20px 0;
+            }
+
+            .important-notice-box p {
+                font-size: 0.95rem;
+            }
+
+            .buy-box {
+                padding: 20px 15px;
+                margin-top: 30px;
+            }
+
+            .btn-call {
+                width: 100%;
+                text-align: center;
+                padding: 12px 20px;
+                font-size: 1.15rem;
+                box-sizing: border-box;
+                border-radius: 30px;
+            }
+        }
+
+        /* --- LIGHTBOX MODAL --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+
+        .modal-content.zoomed {
+            transform: scale(2);
+            cursor: zoom-out;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">रसाळ सिमेंट प्रॉडक्ट्स</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">मुख्यपृष्ठ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="product-gallery">
+            <div class="slider-wrapper">
+                <div class="slider" id="mainSlider">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1781423151/3_rff8sd.jpg" data-highres="                      https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1781423151/3_rff8sd.jpg" alt="सिमेंट गव्हाण १">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1781423114/4_gvfear.jpg" data-highres="                      https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1781423114/4_gvfear.jpg" alt="सिमेंट गव्हाण 2">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1784439699/1784439210081_nbevds.png" data-highres="          https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1784439699/1784439210081_nbevds.png" alt="सिमेंट गव्हाण ३">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1784440404/IMG_20260719_112041_vms8a1.png" data-highres="    https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1784440404/IMG_20260719_112041_vms8a1.png" alt="सिमेंट गव्हाण 4">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1781424597/1_duye44.jpg" data-highres="                      https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1781424597/1_duye44.jpg" alt="सिमेंट गव्हाण 5">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1781423194/6_u2yb8q.jpg" data-highres="                      https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1781423194/6_u2yb8q.jpg" alt="सिमेंट गव्हाण 6">
+                    <img src="https://res.cloudinary.com/dhmks9bn2/image/upload/w_400,q_auto,f_auto/v1781423193/2_ajm9lm.jpg" data-highres="                      https://res.cloudinary.com/dhmks9bn2/image/upload/w_800,q_auto,f_auto/v1781423193/2_ajm9lm.jpg" alt="सिमेंट गव्हाण 7">
+                 
+</div>
+            </div>
+
+            <div class="dots-container" id="dotsContainer">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              
+            </div>
+        </div>
+
+        <div class="product-card-container">
+
+            <h1 class="product-title">मजबूत सिमेंट गव्हाण (Cattle Feeder)</h1>
+
+            <div class="product-overview">
+                <strong>उत्पादनाचा आढावा:</strong> ही सिमेंट गव्हाण खास करून दुग्धव्यवसाय आणि शेतकर्‍यांसाठी गुरांना चारा-पाणी देण्यासाठी डिझाइन केलेली आहे. ही गव्हाण उच्च दर्जाचे सिमेंट आणि आत लोखंडी तारा टाकून बनवली असल्यामुळे अतिशय जड आणि मजबूत आहे. गुरांच्या धक्क्याने ती अजिबात सरकत किंवा उलटत नाही.
+            </div>
+
+
+
+            <h2>महत्त्वाची वैशिष्ट्ये</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-title">💎 जास्त टिकणारी</span>
+                    लोखंडी जाळी आणि उच्च दर्जाचे काँक्रीट वापरल्यामुळे ही गव्हाण दीर्घकाळ टिकते.
+                </div>
+                <div class="feature-item">
+                    <span class="feature-title">☀️ ऊन-पावसाला तोंड देणारी</span>
+                    अति उष्णता, थंडी, पाऊस किंवा गुरांच्या लाथांमुळेही गव्हाण खराब होत नाही.
+                </div>
+                <div class="feature-item">
+                    <span class="feature-title">🛡️ गुरांसाठी सुरक्षित</span>
+                    या गव्हाणीचे कडा आणि कोपरे मऊ केले आहेत, ज्यामुळे चारा खाताना गुरांच्या तोंडाला इजा होत नाही.
+                </div>
+                <div class="feature-item">
+                    <span class="feature-title">🧼 धुण्यास सोपी</span>
+                    आतून पृष्ठभाग पूर्णपणे मऊ असल्यामुळे बुरशी किंवा शिळा चारा चटकन धुऊन काढता येतो.
+                </div>
+            </div>
+
+            <h2>तांत्रिक माहिती</h2>
+            <table class="specs-table">
+                <tr>
+                    <th>कच्चा माल (मटेरियल)</th>
+                    <td>मजबूत सिमेंट (RCC) आणि मजबुतीसाठी लोखंडी जाळी</td>
+                </tr>
+                <tr>
+                    <th>रचना</th>
+                    <td>मऊ कडा असलेली आणि स्वच्छ करायला सोपी डिझाइन</td>
+                </tr>
+                <tr>
+                    <th>वापर</th>
+                    <td>गायी, म्हशी, बैल व शेळ्या-मेंढ्यांसाठी चारा-पाणी</td>
+                </tr>
+                <tr>
+                    <th>फिनिशिंग</th>
+                    <td>आतून पूर्णपणे मऊ आणि बाहेरून सिमेंट रंग</td>
+                </tr>
+            </table>
+
+            <h2>गव्हाण वापरण्याचे काय फायदे आहेत?</h2>
+            <ul class="custom-list">
+                <li><strong>चाऱ्याची बचत (वरकड थांबणे):</strong> चारा जमिनीवर पडत नाही, गोठ्यातील कचरा किंवा शेण-मूत्र त्यात मिसळत नाही. यामुळे चाऱ्याची २०% पर्यंत नासाडी थांबते.</li>
+                <li><strong>गुरांचे आरोग्य चांगले राहते:</strong> जमिनीवर न पडलेला स्वच्छ चारा खाल्ल्यामुळे गुरे निरोगी राहतात आणि आजारी पडण्याचे प्रमाण कमी होते.</li>
+                <li><strong>पाणी पिण्यासाठी सोयीस्कर:</strong> गुरांना स्वच्छ आणि थंड पिण्याचे पाणी देण्यासाठी देखील ही गव्हाण वापरता येते.</li>
+                <li><strong>कामाची सोय:</strong> जड असल्यामुळे गुरे गव्हाण पाडू शकत नाहीत, ज्यामुळे गोठ्यातील काम सोपे व स्वच्छ राहते.</li>
+            </ul>
+
+            <h2>उपलब्ध साईझ (लांबी आणि व्यास)</h2>
+            <div class="dimension-box">
+                <p class="length-highlight"><strong>लांबी:</strong> गव्हाणीची लांबी ८ फूट ३ इंच असते, आणि तुमच्या गरजेनुसार आवश्यक त्या आकारात (साईझमध्ये) ती कापून मिळू शकते.</p>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+                <p style="margin-bottom: 8px;"><strong>गव्हाणीचा व्यास (Diameter Options):</strong></p>
+                <div>
+                    <span class="size-tag">18" (इंच)</span>
+                    <span class="size-tag">27" (इंच)</span>
+                    <span class="size-tag">31.5" (इंच)</span>
+                    <span class="size-tag">35.5" (इंच)</span>
+                </div>
+            </div>
+
+            <div class="important-notice-box">
+                <strong>महत्त्वाचे:</strong>
+                <p>● आमच्याकडे सर्व साईझच्या गव्हाणींसाठी मजबूत <strong>सिमेंट स्टँड (Stands)</strong> आणि <strong>झाकण / कॅप्स (Caps)</strong> देखील उपलब्ध आहेत.</p>
+                <p>● गव्हाण, स्टँड आणि झाकण (कॅप्स) तुमच्या गोठ्यामध्ये व्यवस्थित बसवून आणि फिटिंग करून देण्यासाठी आमच्याकडे <strong>अनुभवी कामगार आहेत</strong>जेणेकरून तुमचे काम सोपे होईल.</p>
+            </div>
+
+            <div class="buy-box">
+                <p class="price-text">किंमत जाणून घेण्यासाठी फोन करा</p>
+                <p class="availability-text">● माल स्टॉकमध्ये तयार आहे</p>
+                <a href="#" class="btn-call" id="btnCallTrigger">📞 त्वरित फोन करा</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <!-- Call Options Modal -->
+    <div id="callModal" class="modal">
+        <span class="close-modal" id="closeCallModal">&times;</span>
+        <div class="modal-content" style="background: white; padding: 30px; border-radius: 8px; text-align: center; max-width: 400px; width: 90%; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <h3 style="margin-bottom: 20px; color: #2c3e50; font-size: 1.5rem;">📞 फोन करण्यासाठी संपर्क निवडा</h3>
+            <a href="tel:9876543210" class="btn-call" style="display: block; margin-bottom: 15px; background-color: #27ae60; text-decoration: none; text-align: center; color: white;">काकासाहेब रसाळ<br><span style="font-size: 0.95rem; font-weight: normal;">9876543210</span></a>
+            <a href="tel:1234567890" class="btn-call" style="display: block; background-color: #3498db; text-decoration: none; text-align: center; color: white;">संतोष रसाळ<br><span style="font-size: 0.95rem; font-weight: normal;">1234567890</span></a>
+        </div>
+
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullImage" alt="Enlarged view">
+    </div>
+
+        <script>
+        const slider = document.getElementById('mainSlider');
+        const dots = document.querySelectorAll('.dot');
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImage");
+
+        // 1. Update dots on scroll
+        if (slider && dots.length > 0) {
+            slider.addEventListener('scroll', () => {
+                const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            });
+        }
+
+        // 2. Open Lightbox with High-Res Image
+        document.querySelectorAll('.slider img').forEach(image => {
+            image.onclick = function () {
+                modal.style.display = "flex";
+                modalImg.src = this.getAttribute('data-highres') || this.src;
+                modalImg.classList.remove('zoomed');
+            }
+        });
+
+        // 3. Zoom Toggle
+        modalImg.onclick = (e) => {
+            e.stopPropagation();
+            modalImg.classList.toggle('zoomed');
+        };
+
+        // 4. Close Modal
+        modal.onclick = () => modal.style.display = "none";
+        document.querySelector('#imageModal .close-modal').onclick = () => modal.style.display = "none";
+
+        // 5. Call Modal logic
+        const callModal = document.getElementById("callModal");
+        const btnCallTrigger = document.getElementById("btnCallTrigger");
+        const closeCallModal = document.getElementById("closeCallModal");
+
+        if (btnCallTrigger && callModal) {
+            btnCallTrigger.onclick = function (e) {
+                e.preventDefault();
+                callModal.style.display = "flex";
+            };
+        }
+
+        if (closeCallModal) {
+            closeCallModal.onclick = () => {
+                callModal.style.display = "none";
+            };
+        }
+
+        callModal.onclick = (e) => {
+            if (e.target === callModal) {
+                callModal.style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+
+</html>
